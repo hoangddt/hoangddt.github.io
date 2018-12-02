@@ -10,9 +10,18 @@ let countDown = new Date('Mar 15, 2019 00:00:00').getTime(),
     x = setInterval(function() {
 
         let now = new Date().getTime(),
-        distance = countDown - now;
-        document.getElementById('weeks').innerText = Math.floor(distance / (week)),
-        document.getElementById('days').innerText = Math.floor(distance / (day)),
+            distance = countDown - now,
+            days = Math.floor(distance / (day));
+            weeks = Math.floor(distance / (week));
+
+        day_margin = (days % 7);
+        nearest_sunday = days - ((weeks-1) * 7 + day_margin)
+        date_in_week_distance = nearest_sunday;
+
+        document.getElementById('days').innerText = days,
+
+        document.getElementById('weeks').innerText = weeks,
+        document.getElementById('weekdays').innerText = date_in_week_distance,
         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
