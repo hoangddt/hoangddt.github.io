@@ -15,15 +15,11 @@ let countDown = new Date('Mar 15, 2019 00:00:00').getTime(),
             days = sight * Math.floor(Math.abs(distance) / (day));
             weeks = sight * Math.floor(Math.abs(distance) / (week));
 
-        day_margin = (days % 7);
-        console.log("extra day: ", day_margin);
-        nearest_sunday = days - ((weeks-1) * 7 + day_margin);
-        date_in_week_distance = nearest_sunday;
 
         document.getElementById('days').innerText = days,
 
         document.getElementById('weeks').innerText = weeks,
-        document.getElementById('weekdays').innerText = date_in_week_distance,
+        document.getElementById('weekdays').innerText = 7 - new Date().getDay(),
         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
