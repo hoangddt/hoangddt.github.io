@@ -19,7 +19,7 @@ let countDown = new Date('Mar 15, 2019 00:00:00').getTime(),
         document.getElementById('days').innerText = days,
 
         document.getElementById('weeks').innerText = weeks,
-        document.getElementById('weekdays').innerText = 7 - new Date().getDay(),
+        document.getElementById('weekdays').innerText = 8 - new Date().getDay(),
         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
